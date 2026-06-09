@@ -2,8 +2,8 @@ name: Daily Christmas Countdown Tweet
 
 on:
   schedule:
-    # 9:00 AM Argentina time (UTC-3) = 12:00 UTC
-    - cron: '0 12 * * *'
+    # 3:00 AM Mexico City time (UTC-6) = 09:00 UTC
+    - cron: '0 9 * * *'
   workflow_dispatch: # permite ejecutarlo manualmente desde GitHub
 
 jobs:
