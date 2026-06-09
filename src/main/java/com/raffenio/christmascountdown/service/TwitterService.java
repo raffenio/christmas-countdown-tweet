@@ -53,12 +53,14 @@ public class TwitterService {
             return;
         }
 
-        if (testTweetEnabled) {
-            sendTestTweet();
-        }
     }
 
+    // Mantenido para pruebas manuales, no se llama automáticamente
     public void sendTestTweet() {
+        if (!testTweetEnabled) {
+            log.info("Tweet de prueba deshabilitado (twitter.test-tweet.enabled=false)");
+            return;
+        }
         log.info("Enviando tweet de prueba...");
         postTweet("Tweet de prueba - integracion con Twitter API funcionando correctamente.");
     }

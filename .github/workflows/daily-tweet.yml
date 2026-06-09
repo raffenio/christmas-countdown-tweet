@@ -27,4 +27,4 @@ jobs:
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-        run: mvn spring-boot:run -Dspring-boot.run.arguments="--twitter.test-tweet.enabled=false"
+        run: mvn spring-boot:run

@@ -34,7 +34,7 @@ public class CountdownService {
 
         String emoji = selectEmoji(days);
         return String.format(
-                "%s ¡Faltan %d días para Navidad! 🎅🎁 #CuentaRegresiva #Navidad #Christmas #HolidayCountdown",
+                "%s ¡Faltan %d días para Navidad! 🎅🎁 #CuentaRegresiva #DiasParaHoHoHo #Navidad #Christmas #HolidayCountdown #RaffenioDev",
                 emoji, days
         );
     }
