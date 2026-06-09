@@ -1,0 +1,9 @@
+# Copiá este archivo a application-local.properties y completá los valores
+# El archivo application-local.properties está en .gitignore (nunca se sube a GitHub)
+
+twitter.api-key=TU_CONSUMER_KEY
+twitter.api-secret=TU_CONSUMER_SECRET
+twitter.access-token=TU_ACCESS_TOKEN
+twitter.access-token-secret=TU_ACCESS_TOKEN_SECRET
+
+twitter.test-tweet.enabled=false
