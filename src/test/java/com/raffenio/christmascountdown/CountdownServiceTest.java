@@ -1,5 +1,6 @@
 package com.raffenio.christmascountdown;
 
+import com.raffenio.christmascountdown.service.ChristmasMessageService;
 import com.raffenio.christmascountdown.service.CountdownService;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CountdownServiceTest {
 
-    private final CountdownService service = new CountdownService();
+    private final CountdownService service = new CountdownService(new ChristmasMessageService());
 
     @Test
     void daysUntilChristmas_shouldBePositive() {

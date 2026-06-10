@@ -10,6 +10,12 @@ public class CountdownService {
 
     private static final MonthDay CHRISTMAS = MonthDay.of(12, 25);
 
+    private final ChristmasMessageService messageService;
+
+    public CountdownService(ChristmasMessageService messageService) {
+        this.messageService = messageService;
+    }
+
     public long daysUntilChristmas() {
         LocalDate today = LocalDate.now();
         LocalDate nextChristmas = CHRISTMAS.atYear(today.getYear());
@@ -33,9 +39,10 @@ public class CountdownService {
         }
 
         String emoji = selectEmoji(days);
+        String randomMsg = messageService.randomMessage();
         return String.format(
-                "%s ¡Faltan %d días para Navidad! 🎅🎁 #CuentaRegresiva #DiasParaHoHoHo #Navidad #Christmas #HolidayCountdown #RaffenioDev",
-                emoji, days
+                "%s ¡Faltan %d días para Navidad! 🎅🎁\n\n%s\n\n#CuentaRegresiva #DiasParaHoHoHo #Navidad #Christmas #HolidayCountdown #RaffenioDev",
+                emoji, days, randomMsg
         );
     }
 
