@@ -130,3 +130,8 @@ mvn test
 | Twitter4J        | 4.1.2   | Cliente para la Twitter API v1.1 |
 | Java             | 17      | Lenguaje                         |
 | Maven            | 3.8+    | Build y dependencias             |
+
+
+
+
+Change to update repo 2026/11/18
