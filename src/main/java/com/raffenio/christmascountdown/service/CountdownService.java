@@ -4,11 +4,14 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.MonthDay;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 
 @Service
 public class CountdownService {
 
     private static final MonthDay CHRISTMAS = MonthDay.of(12, 25);
+    private static final ZoneId ZONE = ZoneId.of("America/Mexico_City");
 
     private final ChristmasMessageService messageService;
 
@@ -17,14 +20,14 @@ public class CountdownService {
     }
 
     public long daysUntilChristmas() {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(ZONE);
         LocalDate nextChristmas = CHRISTMAS.atYear(today.getYear());
 
         if (!today.isBefore(nextChristmas)) {
             nextChristmas = CHRISTMAS.atYear(today.getYear() + 1);
         }
 
-        return today.until(nextChristmas, java.time.temporal.ChronoUnit.DAYS);
+        return ChronoUnit.DAYS.between(today, nextChristmas);
     }
 
     public String buildTweetMessage() {
